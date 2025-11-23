@@ -1,3 +1,7 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -16,13 +20,25 @@
                 <span>Tecmave</span>
             </div>
             <nav class="nav">
-                <a href="/Index"><i class="fa-solid fa-house"></i> Home</a>
-                <a href="/Panel"><i class="fa-solid fa-gauge-high"></i> Panel</a>
-                <a href="/Colaboradores"><i class="fa-solid fa-id-badge"></i> Colaboradores</a>
-                <a href="/Facturacion"><i class="fa-solid fa-file-invoice-dollar"></i> Facturación</a>
-                <a href="/Estadisticas"><i class="fa-solid fa-chart-line"></i> Estadísticas</a>
-                <a href="/Administracion"><i class="fa-solid fa-gear"></i> Administración</a>
-                <a href="/Usuarios"><i class="fa-solid fa-users"></i> Usuarios</a>
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    if (User.IsInRole("Admin"))
+                    {
+                        <a href="/Index"><i class="fa-solid fa-house"></i> Home</a>
+                        <a href="/Panel"><i class="fa-solid fa-gauge-high"></i> Panel</a>
+                        <a href="/Colaboradores"><i class="fa-solid fa-id-badge"></i> Colaboradores</a>
+                        <a href="/Facturacion"><i class="fa-solid fa-file-invoice-dollar"></i> Facturación</a>
+                        <a href="/Estadisticas"><i class="fa-solid fa-chart-line"></i> Estadísticas</a>
+                        <a href="/Administracion"><i class="fa-solid fa-gear"></i> Administración</a>
+                        <a href="/Usuarios"><i class="fa-solid fa-users"></i> Usuarios</a>
+                    }
+                    else
+                    {
+                        <a href="/Index"><i class="fa-solid fa-house"></i> Home</a>
+                        <a href="/Vehiculos"><i class="fa-solid fa-car"></i> Mis Vehículos</a>
+                        <a href="/Citas"><i class="fa-solid fa-calendar"></i> Mis Citas</a>
+                    }
+                }
             </nav>
         </aside>
         <header class="topbar">
@@ -33,7 +49,7 @@
             <button id="theme-toggle-btn" class="iconbtn">
                 <i class="fas fa-moon"></i>
             </button>
-            <button class="iconbtn"><i class="fa-regular fa-user"></i> <span id="user-display-name">Admin</span></button>
+            <button class="iconbtn"><i class="fa-regular fa-user"></i> <span id="user-display-name">@UserManager.GetUserName(User)</span></button>
         </header>
         <main class="main">
             <div class="container">

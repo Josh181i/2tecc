@@ -22,12 +22,13 @@ body {
   padding: 20px 15px !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
   width: 280px !important;
-  left: -280px;
+  box-sizing: border-box !important;
+  transform: translateX(-100%);
   z-index: 1001;
 }
 
 .sidebar.open {
-    left: 0;
+    transform: translateX(0);
 }
 
 .sidebar .brand {
@@ -74,7 +75,7 @@ body {
   z-index: 100 !important;
   display: flex;
   align-items: center;
-  margin-left: 280px;
+  transition: margin-left 0.3s ease;
 }
 
 .iconbtn {
@@ -96,7 +97,8 @@ body {
 }
 
 .main {
-    margin-left: 280px;
+    transition: margin-left 0.3s ease;
+    padding: 20px;
 }
 
 .sidebar-overlay {
@@ -108,8 +110,43 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1000;
     display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .sidebar-overlay.active {
     display: block;
+    opacity: 1;
+}
+
+@media (min-width: 981px) {
+    .sidebar {
+        transform: translateX(0);
+    }
+    .main {
+        margin-left: 280px;
+    }
+    .topbar {
+        margin-left: 280px;
+    }
+    [data-toggle-sidebar] {
+        display: none;
+    }
+}
+
+.card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e9ecef;
 }
