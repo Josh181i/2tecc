@@ -1,0 +1,11 @@
+@{
+    var pageName = Path.GetFileNameWithoutExtension(PageContext.ActionDescriptor.DisplayName);
+    if (pageName == "Index" || pageName == "Login")
+    {
+        Layout = "_PublicLayout";
+    }
+    else
+    {
+        Layout = "_AppLayout";
+    }
+}

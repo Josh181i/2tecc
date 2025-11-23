@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Tecmave</title>
+    <link rel="stylesheet" href="~/css/styles.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <header class="alpha-header">
+        <nav class="alpha-nav">
+            <div class="nav-brand">
+                <div class="logo">
+                    <img src="~/img/tecmave_logo_innovacion.jpg" alt="Tecmave Logo">
+                </div>
+                <h1>TECMAVE</h1>
+            </div>
+            <div class="nav-menu">
+                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#servicios" class="nav-link">Servicios</a>
+                <a href="#nosotros" class="nav-link">Nosotros</a>
+                <a href="#testimonios" class="nav-link">Testimonios</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+            <div class="nav-actions">
+                <a href="/login" class="btn-primary">Acceder</a>
+            </div>
+        </nav>
+    </header>
+
+    <div id="inicio">
+        @RenderBody()
+    </div>
+
+    <section id="servicios" class="services-alpha">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Nuestros Servicios</h2>
+                <p class="section-subtitle">Soluciones integrales para el cuidado de tu vehículo</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h2>Sobre Nosotros</h2>
+                    <p>En Tecmave nos dedicamos a brindar servicios automotrices de la más alta calidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios" class="testimonials-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="cta-alpha">
+        <div class="container">
+            <div class="cta-content-alpha" data-aos="zoom-in">
+                <h2>¿Necesitas ayuda con tu vehículo?</h2>
+                <p>Contáctanos hoy mismo y recibe una cotización gratuita</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="~/js/site.js"></script>
+</body>
+</html>

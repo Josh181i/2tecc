@@ -1,0 +1,48 @@
+@page
+@model Tecmave.Front.Pages.IndexModel
+@{
+    ViewData["Title"] = "Bienvenido a Tecmave";
+}
+
+<link rel="stylesheet" href="~/css/styles.css" />
+
+<header class="alpha-header">
+    <nav class="alpha-nav">
+        <div class="nav-brand">
+            <div class="logo">
+                <img src="~/img/tecmave_logo_innovacion.jpg" alt="Tecmave Logo">
+            </div>
+            <h1>TECMAVE</h1>
+        </div>
+        <div class="nav-menu">
+            <a href="#inicio" class="nav-link active">Inicio</a>
+            <a href="#servicios" class="nav-link">Servicios</a>
+            <a href="#nosotros" class="nav-link">Nosotros</a>
+            <a href="#contacto" class="nav-link">Contacto</a>
+        </div>
+        <div class="nav-actions">
+            <a href="/login" class="btn-primary">Acceder</a>
+        </div>
+    </nav>
+</header>
+
+<section id="inicio" class="alpha-hero">
+    <div class="hero-container">
+        <div class="hero-content" data-aos="fade-right">
+            <h1 class="hero-title">
+                Expertos en <span class="text-highlight">Servicios Automotrices</span>
+            </h1>
+            <p class="hero-description">
+                Más de 15 años brindando soluciones confiables para tu vehículo.
+            </p>
+            <div class="hero-actions">
+                <button class="btn-hero-primary">Agendar Cita</button>
+            </div>
+        </div>
+        <div class="hero-visual" data-aos="fade-left">
+            <div class="hero-image">
+                <img src="~/img/tecmave_exterior_1.jpg" alt="Taller Tecmave">
+            </div>
+        </div>
+    </div>
+</section>

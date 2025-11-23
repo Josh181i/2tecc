@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Tecmave</title>
+    <link rel="stylesheet" href="~/css/app-styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+    <div class="app">
+        <div class="sidebar-overlay"></div>
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="~/img/tecmave_logo_innovacion.jpg" alt="Tecmave Logo">
+                <span>Tecmave</span>
+            </div>
+            <nav class="nav">
+                <a href="/Index"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="/Panel"><i class="fa-solid fa-gauge-high"></i> Panel</a>
+                <a href="/Colaboradores"><i class="fa-solid fa-id-badge"></i> Colaboradores</a>
+                <a href="/Facturacion"><i class="fa-solid fa-file-invoice-dollar"></i> Facturación</a>
+                <a href="/Estadisticas"><i class="fa-solid fa-chart-line"></i> Estadísticas</a>
+                <a href="/Administracion"><i class="fa-solid fa-gear"></i> Administración</a>
+                <a href="/Usuarios"><i class="fa-solid fa-users"></i> Usuarios</a>
+            </nav>
+        </aside>
+        <header class="topbar">
+            <button class="iconbtn" data-toggle-sidebar><i class="fa-solid fa-bars"></i></button>
+            <div id="site-header" class="brand2">
+                <span>@ViewData["Title"]</span>
+            </div>
+            <button id="theme-toggle-btn" class="iconbtn">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="iconbtn"><i class="fa-regular fa-user"></i> <span id="user-display-name">Admin</span></button>
+        </header>
+        <main class="main">
+            <div class="container">
+                @RenderBody()
+            </div>
+        </main>
+    </div>
+    <script src="~/js/site.js"></script>
+</body>
+</html>
